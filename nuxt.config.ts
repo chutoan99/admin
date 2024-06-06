@@ -3,6 +3,7 @@ import vuetify from 'vite-plugin-vuetify'
 import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
+  modules: ['@nuxtjs/apollo', '@vueuse/nuxt', '@nuxtjs/device', '@pinia/nuxt'],
   app: {
     head: {
       titleTemplate: 'Admin',
@@ -67,7 +68,6 @@ export default defineNuxtConfig({
     },
   },
 
-  // ℹ️ Disable source maps until this is resolved: https://github.com/vuetifyjs/vuetify-loader/issues/290
   sourcemap: {
     server: false,
     client: false,
@@ -118,6 +118,11 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
-
-  modules: ['@vueuse/nuxt', '@nuxtjs/device', '@pinia/nuxt'],
+  apollo: {
+    clients: {
+      default: {
+        httpEndpoint: 'http://localhost:8888/graphql',
+      },
+    },
+  },
 })
