@@ -2,7 +2,6 @@
 import type { Component } from 'vue'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useDisplay } from 'vuetify'
-import logo from '@images/logo.svg?raw'
 
 interface Props {
   tag?: string | Component
@@ -59,13 +58,8 @@ const handleNavScroll = (evt: Event) => {
           to="/"
           class="app-logo app-title-wrapper"
         >
-          <div
-            class="d-flex"
-            v-html="logo"
-          />
-
           <h1 class="font-weight-medium leading-normal text-xl text-uppercase">
-            Materio
+            ADMIN
           </h1>
         </NuxtLink>
       </slot>
@@ -147,12 +141,6 @@ const handleNavScroll = (evt: Event) => {
 
   .nav-items {
     block-size: 100%;
-
-    // ℹ️ We no loner needs this overflow styles as perfect scrollbar applies it
-    // overflow-x: hidden;
-
-    // // ℹ️ We used `overflow-y` instead of `overflow` to mitigate overflow x. Revert back if any issue found.
-    // overflow-y: auto;
   }
 
   .nav-item-title {
@@ -162,7 +150,6 @@ const handleNavScroll = (evt: Event) => {
     white-space: nowrap;
   }
 
-  // 👉 Collapsed
   .layout-vertical-nav-collapsed & {
     &:not(.hovered) {
       inline-size: variables.$layout-vertical-nav-collapsed-width;
@@ -170,7 +157,6 @@ const handleNavScroll = (evt: Event) => {
   }
 }
 
-// Small screen vertical nav transition
 @media (max-width:1279px) {
   .layout-vertical-nav {
     &:not(.visible) {

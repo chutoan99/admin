@@ -1,7 +1,6 @@
 <script lang="ts" setup>
+import type { NavLink } from '../types'
 import { NuxtLink } from '#components'
-
-import type { NavLink } from '@layouts/types'
 
 defineProps<{
   item: NavLink
